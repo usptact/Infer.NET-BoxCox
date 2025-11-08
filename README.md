@@ -7,7 +7,7 @@ The **Box–Cox transform** is a family of power transforms that stabilise varia
 $$
 z_i(\lambda) =
 \begin{cases}
-\dfrac{y_i^\lambda - 1}{\lambda}, & \lambda \neq 0,\\[6pt]
+\dfrac{y_i^\lambda - 1}{\lambda}, & \lambda \neq 0,\\
 \log y_i, & \lambda = 0.
 \end{cases}
 $$
@@ -98,7 +98,7 @@ Transformed data z using E[lambda]=0.18:
 ```bash
 dotnet run --project BoxCox
 ```
-   The program prints posterior means for $\mu$, $\tau$, and $\lambda$, followed by transformed data computed at $ \mathbb{E}[\lambda \mid \mathbf{y}] $.
+   The program prints posterior means for $\mu$, $\tau$, and $\lambda$, followed by transformed data computed at $\mathbb{E}[\lambda \mid \mathbf{y}]$.
 
 ### Interpreting Results
 
@@ -116,7 +116,7 @@ dotnet run --project BoxCox
 
 - The current operators assume `y` is observed (no missing-data messages).
 - Accuracy depends on the numerical quadrature within the custom operators.
-- Posterior transformed data currently uses a plug-in \(\hat{\lambda}\); draw samples if you need full uncertainty propagation.
+- Posterior transformed data currently uses a plug-in $\hat{\lambda}$; draw samples if you need full uncertainty propagation.
 
 Despite these caveats, the Bayesian approach provides a principled and extensible alternative to classical MLE-based Box–Cox fitting.
 
