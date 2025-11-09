@@ -39,7 +39,7 @@ z_i(\lambda) &= \mathrm{Box\text{-}Cox}(u_i,\lambda),\\
 z_i \mid \mu,\tau &\sim \mathcal{N}(\mu,\tau^{-1}),\\
 \mu &\sim \mathcal{N}(0,\,2.5^2),\\
 \tau &\sim \mathrm{Gamma}(2,1),\\
-\lambda &\sim \mathcal{N}(0,\,1.5^2).
+\lambda &\sim \mathcal{N}(0,1.5^2).
 \end{aligned}
 $$
 
