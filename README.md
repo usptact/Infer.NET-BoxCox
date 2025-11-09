@@ -7,7 +7,7 @@ The **Box–Cox transform** is a family of power transforms used to stabilise va
 $$
 z_i(\lambda)=
 \begin{cases}
-\dfrac{y_i^\lambda - 1}{\lambda}, & \lambda \neq 0,\\[6pt]
+\dfrac{y_i^\lambda - 1}{\lambda}, & \lambda \neq 0,\\
 \log y_i, & \lambda = 0.
 \end{cases}
 $$
