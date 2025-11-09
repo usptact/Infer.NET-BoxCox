@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Regression.cs" />
+    <Compile Include="BoxCoxModel.cs" />
+    <Compile Include="BoxCoxTransformOp.cs" />
+    <Compile Include="AssemblyAttributes.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML.Probabilistic" Version="0.4.2504.701" />
+    <PackageReference Include="Microsoft.ML.Probabilistic.Compiler" Version="0.4.2504.701" />
+  </ItemGroup>
+</Project>
+
+

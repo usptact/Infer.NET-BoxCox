@@ -53,15 +53,18 @@ $$
 
 ## Folder Structure
 
-- `Program.cs` – main entry point; performs standardisation, constructs the Bayesian model, runs inference, and prints posterior summaries.
+- `Transform.cs` – main entry point; performs standardisation, constructs the Bayesian model, runs inference, and prints posterior summaries.
 - `BoxCoxTransformOp.cs` – custom Infer.NET operator needed for the Box–Cox factor.
+- `Regression.cs` – regression example (compiled via `BoxCoxRegression.csproj`) showing Box–Cox inside a linear model; see `README_regression.md` for details.
 - `README.md` – explanation of the model (this file).
 
-## Running the Example
+## Running the Examples
+
+### 1. Stand-alone Transform (`Transform.cs`)
 
 ```
 dotnet build
-dotnet run --project BoxCox
+dotnet run --project BoxCox/BoxCox.csproj
 ```
 
 Sample output:
@@ -76,12 +79,21 @@ Transformed data z using E[lambda]=...:
   z[1] = ...
 ```
 
-The transformed values are computed using the posterior mean of $\lambda$, though full Bayesian workflows should sample $\lambda$ from its posterior.
+The transformed values above use the posterior mean of $\lambda$; to propagate uncertainty fully, sample $\lambda$ from its posterior instead.
+
+### 2. Regression Demo (`Regression.cs`)
+
+```
+dotnet build
+dotnet run --project BoxCox/BoxCoxRegression.csproj
+```
+
+This prints the posterior over $\lambda$, regression coefficients (mean ± 95 % interval), and the residual precision. For a complete walkthrough see `README_regression.md`.
 
 ## Using Your Own Data
 
 1. Ensure all data are strictly positive.
-2. Edit the data section in `Program.cs`:
+2. Edit the data section in `Transform.cs`:
    ```csharp
    double[] yData = { /* your data */ };
    ```
